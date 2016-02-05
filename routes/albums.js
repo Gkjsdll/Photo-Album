@@ -9,10 +9,16 @@ var User = require('../models/user');
 var Album = require('../models/album');
 
 router.get("/:albumId", User.isLoggedIn, function(req, res, next) {
-  console.log(req.params.albumId);
   Album.findById(req.params.albumId, function(err, album) {
     if(err) return res.send(400, err);
-    res.render("albumdetails", album);
+    res.render("albumdetails", {album: album});
+  });
+});
+
+router.post("/:albumId", User.isLoggedIn, function(req, res, next) {
+  Album.findById(req.params.albumId, function(err, album) {
+    if(err) return res.send(400, err);
+    res.send(500, "Feature not implemented");
   });
 });
 
@@ -24,17 +30,13 @@ router.get("/", User.isLoggedIn, function(req, res, next) {
 });
 
 router.post("/", function(req, res, next) {
-  console.log("Post request recieved.");
   var albumData = req.body;
   albumData.owner = jwt.decode(req.cookies.usertoken, JWT_SECRET)._id;
-  console.log("User identified.");
-  console.log("albumData:", albumData);
   Album.findOne(req.body, function(err, album) {
     if(err) return res.send(400, err);
     if(album) return res.send(400, "An album with this name already exists");
     Album.create(albumData, function(err, savedAlbum) {
       if(err) return res.send(400, err);
-      // console.log("albums:", albums);
       res.send(savedAlbum);
     });
   });
