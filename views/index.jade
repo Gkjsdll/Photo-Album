@@ -1,4 +1,11 @@
 extends layout
 
+block links
+  link(rel="stylesheet", href="/css/index.css")
+
 block content
-  h1= title
+  .container
+    h1= title
+
+block scripts
+  script(src="/js/index.js")

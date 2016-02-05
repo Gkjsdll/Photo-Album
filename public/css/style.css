@@ -1,3 +1,8 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+#navLogout button {
+  margin-top: 8px; }
+
+#navLogin {
+  display: none; }

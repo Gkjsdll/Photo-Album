@@ -5,14 +5,38 @@ html
     link(rel="stylesheet", href="/lib/bootstrap/dist/css/bootstrap.min.css")
     link(rel="stylesheet", href="/lib/sweetalert/dist/sweetalert.css")
     link(rel='stylesheet', href='/css/style.css')
+    block links
   body
-    .container-fluid
-      a(href="/users/login") Login
-      
-      a(href="/users/register") Register
-      block content
+    .navbar.navbar-default
+      .navbar-inner
+        .container
+          .navbar-header
+            button.navbar-toggle(type="button", data-toggle="collapse", data-target="#navCollapse")
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a#siteTitle.navbar-brand(href="/") It's 
+              i gif 
+              | not 
+              i jif
+          #navCollapse.navbar-collapse.collapse
+            ul.nav.navbar-nav.navbar-right
+              li.dropdown#navLogin
+                formr.navbar-form.navbar-right
+                  .form-group
+                    input#exampleInputPassword1.form-control(type='email', placeholder='E-Mail')
+                  .form-group
+                    input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+                  button().btn.btn-default Login
+              li.dropdown#navLogout
+                button(href="/" class="btn btn-default") Logout
 
-    script(src="/lib/bootstrap/dist/js/bootstrap.min.js")
+    block content
+
     script(src="/lib/jquery/dist/jquery.min.js")
+    script(src="/lib/bootstrap/dist/js/bootstrap.min.js")
     script(src="/lib/sweetalert/dist/sweetalert.min.js")
+    script(src="/js/main.js")
+    
     block scripts
