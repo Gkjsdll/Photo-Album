@@ -6,6 +6,17 @@ block links
 block content
   .container
     h1= title
+    form#regForm
+      .form-group
+        label(for="regEmail") E-Mail
+        input(type="email" placeholder="E-Mail" id="regEmail" class="form-control")
+      .form-group
+        label(for="regPass1") Password
+        input(type="password" placeholder="Password" id="regPass1" class="form-control")
+      .form-group
+        label(for="regPass2") Verify Password
+        input(type="password" placeholder="Verify Password" id="regPass2" class="form-control")
+      button(class="btn btn-default") Submit
 
 block scripts
   script(src="/js/index.js")

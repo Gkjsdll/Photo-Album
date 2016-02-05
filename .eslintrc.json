@@ -24,5 +24,8 @@
         "browser": true,
         "jquery": true
     },
-    "extends": "eslint:recommended"
+    "extends": "eslint:recommended",
+    "globals": {
+      "swal": true
+    }
 }

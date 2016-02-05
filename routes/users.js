@@ -14,6 +14,7 @@ router.post('/register', function(req, res, next) {
   ref.createUser(req.body, function(err, userData) {
     if(err) return res.status(400).send(err);
     User.create(userData, function(err) {
+      if(err) return res.status(400).send(err);
       res.send();
     });
   });
@@ -32,6 +33,7 @@ router.post('/login', function(req, res, next) {
 router.get('/profile', User.isLoggedIn, function(req, res) {
   //// logged in,   req.user
   User.findById(req.user._id, function(err, user) {
+    if(err) return res.status(400).send(err);
     res.send(user);
   });
 });
