@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/lib/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/lib/sweetalert/dist/sweetalert.css")
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    .container-fluid
+      a(href="/users/login") Login
+      
+      a(href="/users/register") Register
+      block content
+
+    script(src="/lib/bootstrap/dist/js/bootstrap.min.js")
+    script(src="/lib/jquery/dist/jquery.min.js")
+    script(src="/lib/sweetalert/dist/sweetalert.min.js")
+    block scripts
