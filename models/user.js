@@ -7,6 +7,8 @@ var moment = require('moment');
 
 var JWT_SECRET = process.env.JWT_SECRET;
 
+var Album = require('../models/album');
+
 var ref = new Firebase('https://this-is-vinyl-tap.firebaseio.com/')
 
 var User;
@@ -110,7 +112,7 @@ userSchema.statics.isLoggedIn = function(req, res, next) {
   next();
 
   function authFail(err) {
-    res.redirect("/users/login")
+    res.redirect("/");
   }
 
 };

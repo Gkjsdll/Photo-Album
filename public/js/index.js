@@ -37,7 +37,8 @@ function doRegister(e) {
     $.post("/users/register", {email: $regEmail.val(), password: $regPass1.val()})
     .success(function() {
       swal({
-        title: "Registered successfully"
+        title: "Registered successfully",
+        text: "Please sign in"
       }, clearRegFields);
     })
     .fail(function(err) {
