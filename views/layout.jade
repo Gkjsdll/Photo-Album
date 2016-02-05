@@ -30,7 +30,8 @@ html
                     input#navPass.form-control(type='password', placeholder='Password')
                   button().btn.btn-default Login
               li.dropdown#navLogout
-                button(href="/logout" class="btn btn-default") Logout
+                a(href="/users/logout")
+                  button(class="btn btn-default") Logout
 
     block content
 

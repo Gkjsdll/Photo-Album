@@ -51,6 +51,6 @@ router.get('/profile', User.isLoggedIn, function(req, res) {
 });
 
 router.get('/logout', function(req, res, next) {
-  res.clearCookie('mytoken').redirect('/');
+  res.clearCookie('usertoken').redirect('/');
 });
 module.exports = router;

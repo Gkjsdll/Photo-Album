@@ -15,7 +15,7 @@ block content
   .container
     ul#albumListings
       each album in albums
-        li.listing.col-xs-4
+        li.listing.col-xs-4(data-id=album._id)
           h2
             = album.title
 

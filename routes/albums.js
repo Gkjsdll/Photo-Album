@@ -8,6 +8,14 @@ var JWT_SECRET = process.env.JWT_SECRET;
 var User = require('../models/user');
 var Album = require('../models/album');
 
+router.get("/:albumId", User.isLoggedIn, function(req, res, next) {
+  console.log(req.params.albumId);
+  Album.findById(req.params.albumId, function(err, album) {
+    if(err) return res.send(400, err);
+    res.render("albumdetails", album);
+  });
+});
+
 router.get("/", User.isLoggedIn, function(req, res, next) {
   Album.findByOwner(req.cookies.usertoken, function(err, albums) {
     if(err) res.send(400, err);
@@ -21,10 +29,14 @@ router.post("/", function(req, res, next) {
   albumData.owner = jwt.decode(req.cookies.usertoken, JWT_SECRET)._id;
   console.log("User identified.");
   console.log("albumData:", albumData);
-  Album.create(albumData, function(err, savedAlbum) {
-    if(err) return res.send(err);
-    // console.log("albums:", albums);
-    res.send(savedAlbum);
+  Album.findOne(req.body, function(err, album) {
+    if(err) return res.send(400, err);
+    if(album) return res.send(400, "An album with this name already exists");
+    Album.create(albumData, function(err, savedAlbum) {
+      if(err) return res.send(400, err);
+      // console.log("albums:", albums);
+      res.send(savedAlbum);
+    });
   });
 })
 

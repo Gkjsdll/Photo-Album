@@ -7,3 +7,5 @@
   background-color: #d6e3ff;
   border-radius: 12px;
   list-style: none; }
+  .listing:hover {
+    cursor: pointer; }

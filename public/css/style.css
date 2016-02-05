@@ -1,6 +1,9 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
+#navLogout a {
+  padding: 0px; }
+
 #navLogout button {
   margin-top: 8px; }
 
