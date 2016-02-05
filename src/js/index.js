@@ -41,7 +41,7 @@ function doRegister(e) {
       }, clearRegFields);
     })
     .fail(function(err) {
-      swal(JSON.parse(err.responseText).code);
+      console.warn(err);
     });
   }
 }

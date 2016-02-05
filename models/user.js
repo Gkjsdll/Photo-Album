@@ -90,7 +90,7 @@ userSchema.statics.isLoggedIn = function(req, res, next) {
     (this will invoke the next piece of middleware)
 5.  If the token cannot be decoded, or it has expired, respond immediately with a code 401 (unauthorized)
 */
-  var token = req.cookies.userjwt;
+  var token = req.cookies.usertoken;
   if(!token) return authFail('no token');
 
   // jwt.decode may fail, so we can wrap it in a try-catch block.
