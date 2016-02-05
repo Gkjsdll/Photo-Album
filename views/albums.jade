@@ -12,6 +12,12 @@ block content
       .spacer.col-xs-1
         label.spacerText Spacer
         button.btn.btn-default(type='submit') Create
+  .container
+    ul#albumListings
+      each album in albums
+        li.listing.col-xs-4
+          h2
+            = album.title
 
 block scripts
   script(src="/js/albums.js")
