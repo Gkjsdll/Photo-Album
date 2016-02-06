@@ -11,7 +11,13 @@
     #images li .spacing {
       height: 20vw;
       margin: 0px 0px 0px 0px; }
-    #images li img {
-      max-height: 20vw;
-      padding: auto;
-      max-width: 100%; }
+      #images li .spacing button {
+        font-size: 16px;
+        position: absolute;
+        visibility: hidden; }
+      #images li .spacing:hover button {
+        visibility: visible; }
+      #images li .spacing img {
+        max-height: 20vw;
+        padding: auto;
+        max-width: 100%; }
