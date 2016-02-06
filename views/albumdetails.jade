@@ -21,7 +21,7 @@ block content
       each image in album.images
         li.col-xs-4.row
           .spacing
-            button.btn.btn-default
+            button.btn.btn-default(data-id=image.id)
               .glyphicon.glyphicon-trash
             img(src=image.url)
 
