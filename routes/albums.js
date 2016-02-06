@@ -12,7 +12,8 @@ router.get("/:albumId", User.isLoggedIn, function(req, res, next) {
   Album.findById(req.params.albumId, function(err, album) {
     if(err) return res.send(400, err);
     res.cookie("currAlbum", req.params.albumId).render("albumdetails", {album: album});
-  });
+  })
+  .populate("images");
 });
 
 router.post("/:albumId", User.isLoggedIn, function(req, res, next) {

@@ -19,7 +19,8 @@ block content
             button.btn.btn-default Create
     ul#images
       each image in album.images
-        li.xol-xs-4 There is supposed to be an image here
+        li.col-xs-4
+          img(src=image.url)
 
 block scripts
   script(src="/js/albumdetails.js")
