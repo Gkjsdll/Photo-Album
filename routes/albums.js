@@ -11,7 +11,7 @@ var Album = require('../models/album');
 router.get("/:albumId", User.isLoggedIn, function(req, res, next) {
   Album.findById(req.params.albumId, function(err, album) {
     if(err) return res.send(400, err);
-    res.render("albumdetails", {album: album});
+    res.cookie("currAlbum", req.params.albumId).render("albumdetails", {album: album});
   });
 });
 

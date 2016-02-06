@@ -26,7 +26,6 @@ albumSchema.statics.findByOwner = function (usertoken, cb) {
   var user = jwt.decode(usertoken, JWT_SECRET)._id;
   Album.find({owner: user}, function(err, albums) {
     if(err) return cb(err);
-    console.log("Found albums:", albums);
     cb(null, albums);
   });
 }

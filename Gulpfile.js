@@ -33,6 +33,10 @@ gulp.task('js', ["clean-js"], () => {
     .pipe(gulp.dest("./public/js"));
 });
 
+gulp.task("lint-server", () => {
+  return gulp.src
+});
+
 gulp.task("watch", () => {
   gulp.watch(config.paths.sass, ["css"]);
   gulp.watch(config.paths.js, ["js"]);
