@@ -7,20 +7,21 @@ block content
   .container
     h2
       =album.title
-      form#createImage(action="/images/", method="post", enctype="multipart/form-data")
-        .row
-          .form-group.col-xs-offset-1
-            label(for='title') Add Image
-        .row
-          .form-group.col-xs-5
-            input.form-control(type='file', name="image", multi=false, required)
-        .row
-          .form-group.col-xs-offset-1
-            button.btn.btn-default Create
+    form#createImage(action="/images/", method="post", enctype="multipart/form-data")
+      .row
+        .form-group.col-xs-offset-1
+          label(for='title') Add Image
+      .row
+        .form-group.col-xs-5
+          input.form-control(type='file', name="image", multi=false, required)
+      .row
+        .form-group.col-xs-offset-1
+          button.btn.btn-default Create
     ul#images
       each image in album.images
-        li.col-xs-4
-          img(src=image.url)
+        li.col-xs-4.row
+          .spacing
+            img(src=image.url)
 
 block scripts
   script(src="/js/albumdetails.js")

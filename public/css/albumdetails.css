@@ -1,3 +1,17 @@
 #createImage label {
   font-size: 24px;
   font-weight: normal; }
+
+#images {
+  list-style: none;
+  font-size: 0px; }
+  #images li {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px; }
+    #images li .spacing {
+      height: 20vw;
+      margin: 0px 0px 0px 0px; }
+    #images li img {
+      max-height: 20vw;
+      padding: auto;
+      max-width: 100%; }
