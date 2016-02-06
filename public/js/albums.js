@@ -34,7 +34,7 @@ function albumPostCreate(title, id) {
 }
 
 function gotoListing() {
-  var id = $(this).data("id").substr(1);
-  id = id.substr(0, id.length-1);
+  var id = $(this).data("id");
+  id = id.match(/\w+/g)[0];
   location.href = `/albums/${id}`;
 }
